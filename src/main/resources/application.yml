@@ -1,0 +1,21 @@
+# 开发环境配置
+server:
+  # 服务器的HTTP端口，默认为8090
+  port: 8090
+  servlet:
+    # 应用的访问路径
+    context-path: /
+
+# Spring配置
+spring:
+  # 服务模块
+  devtools:
+    restart:
+      # 热部署开关
+      enabled: true
+
+# 日志配置
+logging:
+  level:
+    com.ruoyi: debug
+    org.springframework: warn
