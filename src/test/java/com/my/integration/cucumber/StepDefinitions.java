@@ -1,5 +1,6 @@
 package com.my.integration.cucumber;
 
+import com.my.integration.MyApplicationRunner;
 import com.my.integration.controller.BookListController;
 import com.my.integration.response.AjaxResult;
 import io.cucumber.java.en.Given;
@@ -7,12 +8,15 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.jupiter.api.Assertions;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
 
 /**
  * @description:
  * @author: Lai Haimeng
  * @date: 2023/12/20
  */
+//整合springboot  此处@Autowired无法加载Bean !?
+//@SpringBootTest(classes = MyApplicationRunner.class)
 public class StepDefinitions {
 
     @Autowired

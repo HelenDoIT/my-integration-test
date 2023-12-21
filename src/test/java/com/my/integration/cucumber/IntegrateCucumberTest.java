@@ -13,14 +13,14 @@ import static io.cucumber.core.options.Constants.PLUGIN_PROPERTY_NAME;
  * @date: 2023/12/20
  */
 //整合springboot
-@SpringBootTest
-@CucumberContextConfiguration
+//@SpringBootTest
+//@CucumberContextConfiguration
 //cucumber 启动
-@Suite
-@IncludeEngines("cucumber")
-@SelectClasspathResource("feature")
-@ConfigurationParameter(key = PLUGIN_PROPERTY_NAME, value = "pretty")
-@ConfigurationParameter(key = GLUE_PROPERTY_NAME, value = "com.my.integration")
+//@Suite
+//@IncludeEngines("cucumber")
+//@SelectClasspathResource("feature")
+//@ConfigurationParameter(key = PLUGIN_PROPERTY_NAME, value = "pretty")
+//@ConfigurationParameter(key = GLUE_PROPERTY_NAME, value = "com.my.integration")
 public class IntegrateCucumberTest {
 
 }
