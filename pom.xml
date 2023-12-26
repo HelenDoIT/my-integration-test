@@ -33,12 +33,12 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <version>${springboot.version}</version>
-            <exclusions>
+            <!--<exclusions>
                 <exclusion>
                     <groupId>org.junit.jupiter</groupId>
                     <artifactId>junit-jupiter</artifactId>
                 </exclusion>
-            </exclusions>
+            </exclusions>-->
         </dependency>
         <!-- SpringBoot Web容器 -->
         <dependency>
@@ -87,6 +87,7 @@
             <artifactId>cucumber-spring</artifactId>
             <version>${cucumber.version}</version>
         </dependency>
+        <!-- cucumber-reporting -->
         <dependency>
             <groupId>net.masterthought</groupId>
             <artifactId>cucumber-reporting</artifactId>
@@ -94,7 +95,7 @@
         </dependency>
 
         <!-- karate -->
-       <!-- <dependency>
+        <dependency>
             <groupId>com.intuit.karate</groupId>
             <artifactId>karate-core</artifactId>
             <version>${karate.version}</version>
@@ -106,19 +107,25 @@
             <artifactId>karate-junit5</artifactId>
             <version>${karate.version}</version>
             <scope>test</scope>
+        </dependency>
+        <!-- cluecumber : karate JSON test report-->
+        <!--<dependency>
+            <groupId>com.trivago.rta</groupId>
+            <artifactId>cluecumber-core</artifactId>
+            <version>3.5.1</version>
         </dependency>-->
     </dependencies>
 
     <build>
         <!-- 测试用例文件和java文件放在同一个目录下 -->
-       <!-- <testResources>
+        <testResources>
             <testResource>
                 <directory>src/test/java</directory>
                 <excludes>
                     <exclude>**/*.java</exclude>
                 </excludes>
             </testResource>
-        </testResources>-->
+        </testResources>
 
         <plugins>
             <!-- maven-surefire插件: 支持从命令行运行Junit5测试 -->

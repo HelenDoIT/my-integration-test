@@ -18,24 +18,14 @@ import static io.cucumber.core.options.Constants.PLUGIN_PROPERTY_NAME;
  * @date: 2023/12/21
  */
 //整合springboot
-@SpringBootTest
-@CucumberContextConfiguration
-//cucumber 启动
-@Suite
-@IncludeEngines("cucumber")
-/*@CucumberOptions(
-        tags = {"@API"},
-        features = {"src/test/resources/feature"},
-        glue = {"com.my.integration"},
-        plugin = {
-                "pretty",
-                "html:target/cucumber",
-                "json:target/cucumberReportJsonFiles/cucumber-report.json"
-        })*/
-@SelectClasspathResource("feature")
-@ConfigurationParameter(key = PLUGIN_PROPERTY_NAME, value = "petty")
-@ConfigurationParameter(key = PLUGIN_PROPERTY_NAME, value = "json:target/cucumberReportJsonFiles/cucumber.json")
-@ConfigurationParameter(key = GLUE_PROPERTY_NAME, value = "com.my.integration")
+//@SpringBootTest
+//@CucumberContextConfiguration
+////cucumber 启动
+//@Suite
+//@IncludeEngines("cucumber")
+//@SelectClasspathResource("feature")
+//@ConfigurationParameter(key = PLUGIN_PROPERTY_NAME, value = "json:target/cucumberReportJsonFiles/cucumber.json")
+//@ConfigurationParameter(key = GLUE_PROPERTY_NAME, value = "com.my.integration")
 public class CucumberReportTest {
 
     @Test
