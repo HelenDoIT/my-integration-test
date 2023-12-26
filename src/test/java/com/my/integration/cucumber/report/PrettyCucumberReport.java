@@ -18,7 +18,7 @@ public class PrettyCucumberReport {
         List<String> jsonFiles = new ArrayList<>();
         //Cucumber测试结果Json文件的位置
         //from:  @ConfigurationParameter(key = PLUGIN_PROPERTY_NAME, value = "json:target/cucumberReportJsonFiles/cucumber.json")
-        jsonFiles.add("target/cucumberReportJsonFiles/cucumber.json");
+        jsonFiles.add("target/cucumber-report.json");
 
 
         String buildNumber = "1";

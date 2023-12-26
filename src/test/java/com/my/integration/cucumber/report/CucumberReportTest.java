@@ -33,8 +33,7 @@ import static io.cucumber.core.options.Constants.PLUGIN_PROPERTY_NAME;
                 "json:target/cucumberReportJsonFiles/cucumber-report.json"
         })*/
 @SelectClasspathResource("feature")
-@ConfigurationParameter(key = PLUGIN_PROPERTY_NAME, value = "petty")
-@ConfigurationParameter(key = PLUGIN_PROPERTY_NAME, value = "json:target/cucumberReportJsonFiles/cucumber.json")
+@ConfigurationParameter(key = PLUGIN_PROPERTY_NAME, value = "json:target/cucumber-report.json,html:target/cucumber-html.html")
 @ConfigurationParameter(key = GLUE_PROPERTY_NAME, value = "com.my.integration")
 public class CucumberReportTest {
 
