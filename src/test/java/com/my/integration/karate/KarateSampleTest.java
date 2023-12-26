@@ -1,7 +1,6 @@
 package com.my.integration.karate;
 
 import com.intuit.karate.junit5.Karate;
-import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.AfterAll;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -12,30 +11,26 @@ import org.springframework.boot.test.context.SpringBootTest;
  */
 @SpringBootTest(
         webEnvironment = SpringBootTest.WebEnvironment.DEFINED_PORT)
-@Slf4j
 public class KarateSampleTest {
 
     @Karate.Test
     Karate testSample() {
-        return Karate.run(new String[]{"sample"}).relativeTo(getClass()).outputCucumberJson(true);
+        return Karate.run("classpath:com/my/integration/karate").relativeTo(getClass()).outputCucumberJson(true);
     }
 
-    @Karate.Test
+    /*@Karate.Test
     Karate testTags() {
         return Karate.run("tags").relativeTo(getClass()).outputCucumberJson(true);
-    }
+    }*/
 
+    /**
+     * 在跑所有测试案例之后, 调用PrettyKarateReport美化测试结果报告
+     * 注意这里是: org.junit.jupiter.api.AfterAll
+     */
     @AfterAll
     public static void generateReport(){
         System.out.println("run after all test: gen pretty reports");
         PrettyKarateReport prettyKarateReport = new PrettyKarateReport();
         prettyKarateReport.generateCucumberReport();
     }
-    /*@Karate.Test
-    Karate testSystemProperty() {
-        return Karate.run("classpath:karate/tags.feature")
-                .tags("@second")
-                .karateEnv("e2e")
-                .systemProperty("foo", "bar");
-    }*/
 }

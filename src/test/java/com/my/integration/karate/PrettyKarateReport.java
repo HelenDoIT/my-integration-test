@@ -19,18 +19,15 @@ public class PrettyKarateReport {
         File reportOutputDirectory = new File("target");
         List<String> jsonFiles = new ArrayList<>();
         //karate测试结果Json文件的位置
+        jsonFiles.add("target/karate-reports/com.my.integration.karate.sample.json");
         jsonFiles.add("target/karate-reports/com.my.integration.karate.tags.json");
 
         String buildNumber = "1";
         String projectName = "my-integration-test";
-        boolean runWithJenkins = false;
-        boolean parallelTesting = false;
 
         Configuration configuration = new Configuration(reportOutputDirectory, projectName);
 
         // optional configuration
-        //configuration.setParallelTesting(parallelTesting);
-        //configuration.setRunWithJenkins(runWithJenkins);
         configuration.setBuildNumber(buildNumber);
         // optionally add metadata on main page
         configuration.addClassifications("Platform", "Windows");
