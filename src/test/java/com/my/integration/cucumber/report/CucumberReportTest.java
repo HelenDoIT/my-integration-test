@@ -42,6 +42,10 @@ public class CucumberReportTest {
 
     }
 
+    /**
+     * 注意: 这是org.junit.jupiter.api.AfterAll,
+     * 错用 io.cucumber.java.AfterAll 会在生成report之前执行导致报错: 找不到系统文件xxxx.json
+     */
     @AfterAll
     public static void generateReport(){
         PrettyCucumberReport prettyCucumberReport = new PrettyCucumberReport();
